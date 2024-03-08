@@ -32,10 +32,12 @@ server.get('/:formId/filteredResponses', (req, res) => __awaiter(void 0, void 0,
     try {
         const response = yield axios.get(`${baseUrl}/v1/api/forms/${formId}/submissions`, config);
         if (response.status === 200) {
-            console.log(JSON.stringify(response.data, undefined, 4));
+            const filtered = filterSubmissions(response.data, filters);
+            res.json(filtered);
         }
-        const filtered = filterSubmissions(response.data, filters);
-        res.json(filtered);
+        else {
+            res.status(500).json({ error: "Failed to fetch submissions" });
+        }
     }
     catch (error) {
         res.status(500).json({ error: error });

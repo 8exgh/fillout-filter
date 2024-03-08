@@ -1,4 +1,4 @@
-import { sample1 } from "./submissions.js";
+import { sample1 } from "../submissions.js";
 test("filter sample submissions => equal", () => {
     const sample = sample1;
     // const filter: FilterClauseType[] = [
