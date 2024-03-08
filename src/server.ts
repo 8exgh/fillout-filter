@@ -3,9 +3,13 @@ import axios from "axios";
 import {filterSubmissions} from "./filterSubmissions.js";
 
 const server = express();
-const PORT = 3000;
+const PORT = process.env.PORT ? parseInt(process.env.PORT) : undefined;
 const baseUrl= "https://api.fillout.com"
 const apiKey = process.env.FILLOUT_API_KEY;
+
+if(!PORT) {
+    throw new Error("Set PORT environment variable.");
+}
 
 if(!apiKey) {
     throw new Error("Set FILLOUT_API_KEY environment variable.");
