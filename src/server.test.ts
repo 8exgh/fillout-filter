@@ -2,6 +2,9 @@ import axios from "axios";
 import {ApiResponse} from "./dtos/fillout/getSubmissions/response.js";
 import {FilterClauseType} from "./dtos/localhost/getFilteredResponses/request.js";
 
+const baseUrl = "http://localhost:3000";
+// const baseUrl = "https://fillout-filter-ckds.onrender.com";
+const endpoint = `${baseUrl}/cLZojxk94ous/filteredResponses`;
 describe('filter', () => {
     it('should filter equals', async () => {
         const filter: FilterClauseType[] = [
@@ -15,7 +18,7 @@ describe('filter', () => {
         ]
 
         const response = await axios.get<ApiResponse>(
-            `http://localhost:3000/cLZojxk94ous/filteredResponses?filters=${JSON.stringify(filter)}`);
+            `${endpoint}?filters=${JSON.stringify(filter)}`);
 
         console.log("response", response.data);
 
@@ -34,7 +37,7 @@ describe('filter', () => {
         ]
 
         const response = await axios.get<ApiResponse>(
-            `http://localhost:3000/cLZojxk94ous/filteredResponses?filters=${JSON.stringify(filter)}`);
+            `${endpoint}?filters=${JSON.stringify(filter)}`);
 
         console.log("response", response.data);
 
@@ -53,7 +56,7 @@ describe('filter', () => {
         ]
 
         const response = await axios.get<ApiResponse>(
-            `http://localhost:3000/cLZojxk94ous/filteredResponses?filters=${JSON.stringify(filter)}`);
+            `${endpoint}?filters=${JSON.stringify(filter)}`);
 
         console.log("response", response.data);
 
@@ -71,7 +74,7 @@ describe('filter', () => {
         ]
 
         const response = await axios.get<ApiResponse>(
-            `http://localhost:3000/cLZojxk94ous/filteredResponses?filters=${JSON.stringify(filter)}`);
+            `${endpoint}?filters=${JSON.stringify(filter)}`);
 
         console.log("response", response.data);
 
@@ -93,7 +96,7 @@ describe('filter', () => {
         ]
 
         const response = await axios.get<ApiResponse>(
-            `http://localhost:3000/cLZojxk94ous/filteredResponses?filters=${JSON.stringify(filter)}`);
+            `${endpoint}?filters=${JSON.stringify(filter)}`);
 
         console.log("response", response.data);
 
