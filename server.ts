@@ -23,7 +23,6 @@ server.get('/:formId/filteredResponses', async (req: Request, res: Response) => 
     const filtersStr = req.query.filters as string;
     const filters = filtersStr ? JSON.parse(filtersStr) : [];
 
-
     if(!formId) {
         res.status(400).json({ error: "formId is required" });
     }
